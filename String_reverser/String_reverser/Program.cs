@@ -10,17 +10,17 @@ namespace String_reverser
         static void Main(string[] args)
         {
             string stringToBeReversed;
-            string newString = "";
+            StringBuilder newString = new StringBuilder();
 
             Console.Write("Please input a string: ");
             stringToBeReversed = Console.ReadLine();
 
-            for (int i = stringToBeReversed.Length; i > 0 ; i--)
+            for (int i = stringToBeReversed.Length - 1; i >= 0 ; i--)
             {
-                newString += Convert.ToString(stringToBeReversed[i-1]);                
+                newString.Append(stringToBeReversed[i]);                
             }
 
-            Console.WriteLine("Your reversed string is: " + newString);
+            Console.WriteLine("Your reversed string is: {0}", newString);
 
             Console.ReadKey();
         }
